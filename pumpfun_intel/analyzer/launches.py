@@ -198,7 +198,7 @@ def analyze_launches(
                 coverage_notes.append("missing_name")
 
             # Only include launches involving target wallet as creator, create user,
-            # fee-related participant, or initial buyer — still record all creates seen
+            # fee-related participant, or initial buyer; still record all creates seen
             # in the collected set (wallet history may include creates by this wallet).
             involves_target = (
                 creator == wallet

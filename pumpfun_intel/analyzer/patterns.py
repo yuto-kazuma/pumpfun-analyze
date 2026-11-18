@@ -194,7 +194,7 @@ def write_pattern_report(
         )
 
     lines = [
-        "# PumpFun Launch Intelligence — Pattern Report",
+        "# PumpFun Launch Intelligence: Pattern Report",
         "",
         f"Generated (UTC): {datetime.now(timezone.utc).isoformat()}",
         "",

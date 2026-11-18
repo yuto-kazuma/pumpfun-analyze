@@ -106,6 +106,6 @@ class SolanaRpcClient:
         """DAS getAsset via the same RPC endpoint when Helius-backed."""
         try:
             return self.call("getAsset", [{"id": mint}])
-        except Exception as exc:  # noqa: BLE001 — enrichment path
+        except Exception as exc:  # noqa: BLE001  enrichment path
             logger.warning("getAsset failed for %s: %s", mint, exc)
             return None

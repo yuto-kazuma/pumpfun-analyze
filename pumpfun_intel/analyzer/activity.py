@@ -255,7 +255,7 @@ def decode_and_classify_all(db: Database) -> tuple[int, int]:
                 if entry.get("mint") != mint:
                     continue
                 owner = entry.get("owner")
-                # Bonding curve holds reserves — not an early buyer.
+                # Bonding curve holds reserves, not an early buyer.
                 if not owner or owner == creator or owner == bonding_curve:
                     continue
                 ui = (entry.get("uiTokenAmount") or {}).get("uiAmount")

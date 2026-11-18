@@ -1,4 +1,4 @@
-"""PumpFun Launch Intelligence — Streamlit dashboard (research only)."""
+"""PumpFun Launch Intelligence Streamlit dashboard (research only)."""
 
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ st.set_page_config(
 )
 
 st.title("PumpFun Launch Intelligence")
-st.caption("Research / analytics only — no trading, signing, or execution.")
+st.caption("Research / analytics only. No trading, signing, or execution.")
 
 
 def _filters(launches: pd.DataFrame) -> pd.DataFrame:
@@ -259,7 +259,7 @@ def page_performance(bundle: dict, launches: pd.DataFrame) -> None:
     view = perf[perf["window"] == window]
     if not launches.empty:
         view = view[view["mint"].isin(set(launches["mint"]))]
-    st.caption("Proxy metrics from observed events only — not full-market PnL.")
+    st.caption("Proxy metrics from observed events only, not full-market PnL.")
     st.dataframe(view, use_container_width=True, height=420)
     if not view.empty:
         st.plotly_chart(

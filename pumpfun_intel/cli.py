@@ -22,7 +22,7 @@ from pumpfun_intel.reporting.final_report import generate_final_report
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="pumpfun-intel",
-        description="PumpFun Launch Intelligence — research/analytics only (no trading).",
+        description="PumpFun Launch Intelligence: research/analytics only (no trading).",
     )
     parser.add_argument(
         "--log-level",

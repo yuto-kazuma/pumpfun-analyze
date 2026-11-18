@@ -68,7 +68,7 @@ def discover_patterns(db: Database) -> dict[str, Any]:
                 f"First observed buy is usually immediate (delay<=2s in {zeroish:.0%} of launches)"
             )
 
-    # Seller behavior — label defined with future sells, so treat as outcome correlation only
+    # Seller behavior: label defined with future sells, so treat as outcome correlation only
     if not perf.empty:
         w5 = perf[perf["window"] == "5m"].copy()
         if not w5.empty and metrics["initial_buy_sol"].notna().any():
@@ -96,7 +96,7 @@ def discover_patterns(db: Database) -> dict[str, Any]:
     if hour_counts:
         top_h, top_c = hour_counts.most_common(1)[0]
         observations.append(
-            f"Most common create hour UTC: {top_h}:00 ({top_c} launches) — schedule observation only"
+            f"Most common create hour UTC: {top_h}:00 ({top_c} launches) (schedule observation only)"
         )
 
     sell_rate = float((metrics["sell_count_observed"] > 0).mean())

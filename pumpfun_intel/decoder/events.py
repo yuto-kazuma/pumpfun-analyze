@@ -55,7 +55,7 @@ def parse_create_event(data: bytes) -> dict[str, Any] | None:
 
 
 def parse_trade_event(data: bytes) -> dict[str, Any] | None:
-    """Best-effort TradeEvent parse; layout may evolve — treat as corroboration."""
+    """Best-effort TradeEvent parse; layout may evolve. Treat as corroboration."""
     if len(data) < 8 or data[:8] != TRADE_EVENT_DISCRIMINATOR:
         return None
     # Minimal: mint and user appear after several u64s in common layouts;

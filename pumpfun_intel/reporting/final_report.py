@@ -59,7 +59,7 @@ def generate_final_report(
     sols = [float(r["initial_buy_sol"]) for r in launches if r["initial_buy_sol"] is not None]
     p50 = sorted(sols)[len(sols) // 2] if sols else None
     lines = [
-        "# PumpFun Launch Intelligence — Final Report",
+        "# PumpFun Launch Intelligence: Final Report",
         "",
         f"Generated (UTC): {datetime.now(timezone.utc).isoformat()}",
         "",
@@ -78,7 +78,7 @@ def generate_final_report(
     if top_rel:
         for r in top_rel:
             lines.append(
-                f"- `{r.wallet_b}` — {r.evidence_level}, shared_launches={r.shared_launches}; "
+                f"- `{r.wallet_b}`: {r.evidence_level}, shared_launches={r.shared_launches}; "
                 + "; ".join(r.reasons)
             )
     else:

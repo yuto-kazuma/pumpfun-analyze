@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pumpfun-intel"
 version = "0.1.0"
-description = "PumpFun Launch Intelligence — research/analytics for Pump.fun wallet launches"
+description = "PumpFun Launch Intelligence: research analytics for Pump.fun wallet launches"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }

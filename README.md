@@ -8,7 +8,7 @@ Target wallet (default): `DWHEZ8JnfGtud25Gjhn3MndpTMshNEd12WMu2ciCa7ri`
 
 ## Status
 
-Phases 1–8 implemented (research/analytics only):
+Phases 1-8 implemented (research/analytics only):
 
 1. Resumable historical collector
 2. Instruction-verified launch analyzer
@@ -83,7 +83,7 @@ Collection is **resumable**: re-running `collect` skips signatures already store
 1. Copy `.env.example` → `.env` and set `HELIUS_API_KEY`
 2. `python -m pumpfun_intel.cli collect --days 30`
 3. `python -m pumpfun_intel.cli analyze`
-4. `python -m pumpfun_intel.cli status` — expect `token_launches` > 0 if the wallet created tokens in-window
+4. `python -m pumpfun_intel.cli status` (expect `token_launches` > 0 if the wallet created tokens in-window)
 
 ## Classification rules
 
@@ -92,7 +92,7 @@ Transactions are classified by:
 1. Program ID (`Pump.fun` / `PumpSwap`)
 2. Anchor instruction discriminators (`create`, `create_v2`, `buy`, `sell`, `migrate`, …)
 
-Log text is never used as the sole classifier. Missing transactions are recorded in coverage metadata — never fabricated.
+Log text is never used as the sole classifier. Missing transactions are recorded in coverage metadata, never fabricated.
 
 ## Tests
 
@@ -102,8 +102,8 @@ pytest -q
 
 ## Data layout
 
-- `data/pumpfun_intel.db` — SQLite (raw txs + derived launch tables)
-- `data/cache/` — optional on-disk API batch cache
+- `data/pumpfun_intel.db`: SQLite (raw txs + derived launch tables)
+- `data/cache/`: optional on-disk API batch cache
 
 ## Disclaimer
 
