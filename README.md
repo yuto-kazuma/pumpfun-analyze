@@ -75,6 +75,21 @@ streamlit run pumpfun_intel/dashboard/app.py
 
 Views: overview, launch history, launch detail, relationships graph, funding, initial buys, timelines, performance windows, pattern discovery, coverage, export.
 
+### Streamlit Community Cloud
+
+The full SQLite DB is too large for GitHub. The repo includes `data/cloud_analytics.db` (launches, participants, events, coverage only).
+
+1. Deploy from `main`, entry file `pumpfun_intel/dashboard/app.py`
+2. Secrets example:
+
+```toml
+HELIUS_API_KEY = "your_key"
+TARGET_WALLET = "DWHEZ8JnfGtud25Gjhn3MndpTMshNEd12WMu2ciCa7ri"
+DATABASE_PATH = "data/cloud_analytics.db"
+```
+
+If `data/pumpfun_intel.db` is missing, the app falls back to `data/cloud_analytics.db` automatically.
+
 
 Collection is **resumable**: re-running `collect` skips signatures already stored with `status=ok`.
 

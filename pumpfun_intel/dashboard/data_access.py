@@ -18,10 +18,22 @@ from pumpfun_intel.db.connection import Database
 
 
 def db_path() -> Path:
+    """Prefer full local DB; fall back to committed cloud analytics DB."""
+    candidates: list[Path] = []
     try:
-        return load_settings().database_path
+        candidates.append(load_settings().database_path)
     except Exception:
-        return PROJECT_ROOT / "data" / "pumpfun_intel.db"
+        pass
+    candidates.extend(
+        [
+            PROJECT_ROOT / "data" / "pumpfun_intel.db",
+            PROJECT_ROOT / "data" / "cloud_analytics.db",
+        ]
+    )
+    for path in candidates:
+        if path.exists():
+            return path
+    return candidates[0] if candidates else PROJECT_ROOT / "data" / "cloud_analytics.db"
 
 
 def get_db() -> Database:

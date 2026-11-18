@@ -12,6 +12,7 @@ dist/
 build/
 data/*.db
 data/*.db-*
+!data/cloud_analytics.db
 data/cache/
 data/reports/
 *.log

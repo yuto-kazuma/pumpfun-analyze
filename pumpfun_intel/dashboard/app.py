@@ -18,6 +18,7 @@ if str(ROOT) not in sys.path:
 from pumpfun_intel.dashboard.data_access import (
     cached_analysis_bundle,
     clear_analysis_cache,
+    db_path,
     load_coverage,
     load_events,
     load_launches,
@@ -35,6 +36,7 @@ st.set_page_config(
 
 st.title("PumpFun Launch Intelligence")
 st.caption("Research / analytics only. No trading, signing, or execution.")
+st.sidebar.caption(f"DB: {db_path().name}")
 
 
 def _filters(launches: pd.DataFrame) -> pd.DataFrame:
