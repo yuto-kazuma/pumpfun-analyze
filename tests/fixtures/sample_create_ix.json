@@ -1,0 +1,12 @@
+{
+  "note": "Synthetic create instruction shape for documentation; unit tests build binary discriminators in code.",
+  "programId": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+  "ix_type": "create",
+  "discriminator_hex": "181ec828051c0777",
+  "accounts": {
+    "0": "mint",
+    "2": "bonding_curve",
+    "7": "user"
+  },
+  "args": ["name", "symbol", "uri", "creator"]
+}

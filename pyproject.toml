@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pumpfun-intel"
+version = "0.1.0"
+description = "PumpFun Launch Intelligence — research/analytics for Pump.fun wallet launches"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "PumpFun Launch Intelligence" }]
+dependencies = [
+  "requests>=2.31.0",
+  "python-dotenv>=1.0.0",
+  "tenacity>=8.2.0",
+  "pandas>=2.1.0",
+  "plotly>=5.18.0",
+  "streamlit>=1.29.0",
+  "base58>=2.1.0",
+  "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4.0", "pytest-cov>=4.1.0"]
+
+[project.scripts]
+pumpfun-intel = "pumpfun_intel.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pumpfun_intel*"]
+
+[tool.setuptools.package-data]
+pumpfun_intel = ["db/schema.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
